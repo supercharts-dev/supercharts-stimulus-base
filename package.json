@@ -6,5 +6,8 @@
   "repository": "git@github.com:supercharts-dev/supercharts-stimulus.git",
   "author": "Pascal Laliberté <pascal@hey.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@hotwired/stimulus": "^3.1.0"
+  }
 }
