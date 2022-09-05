@@ -1,0 +1,52 @@
+{
+  "name": "supercharts-stimulus",
+  "version": "0.1.0",
+  "description": "A set of base Stimulus controllers for Supercharts",
+  "source": "src/index.js",
+  "module": "dist/superchart-stimulus.esm.js",
+  "main": "dist/superchart-stimulus.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map",
+    "src/**/*.js"
+  ],
+  "watch": {
+    "update-local-installs": "src/**/*.js"
+  },
+  "scripts": {
+    "prebuild": "$npm_execpath run clean",
+    "build": "microbundle",
+    "clean": "rimraf dist",
+    "prewatch": "$npm_execpath run update-local-installs",
+    "watch": "npm-watch",
+    "update-local-installs": "$npm_execpath run build; yalc push",
+    "prerelease": "$npm_execpath run build",
+    "release": "np --any-branch"
+  },
+  "repository": "git@github.com:supercharts-dev/supercharts-stimulus.git",
+  "author": "Pascal Laliberté <pascal@hey.com>",
+  "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/plugin-proposal-export-default-from": "^7.18.10",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/runtime": "^7.18.9",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
+    "babel-loader": "^8.2.5",
+    "microbundle": "^0.15.1",
+    "np": "^7.6.2",
+    "npm-watch": "^0.11.0",
+    "rimraf": "^3.0.2",
+    "yalc": "^1.0.0-pre.53"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.1.0",
+    "chart.js": "^3.9.1"
+  }
+}
