@@ -6,6 +6,10 @@
   "repository": "git@github.com:supercharts-dev/supercharts-stimulus.git",
   "author": "Pascal Laliberté <pascal@hey.com>",
   "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
   "private": false,
   "devDependencies": {
     "@babel/core": "^7.18.13",
