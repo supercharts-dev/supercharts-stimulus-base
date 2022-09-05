@@ -1,0 +1,10 @@
+{
+  "name": "supercharts-stimulus",
+  "version": "0.1.0",
+  "description": "A set of base Stimulus controllers for Supercharts",
+  "main": "index.js",
+  "repository": "git@github.com:supercharts-dev/supercharts-stimulus.git",
+  "author": "Pascal Laliberté <pascal@hey.com>",
+  "license": "MIT",
+  "private": false
+}
