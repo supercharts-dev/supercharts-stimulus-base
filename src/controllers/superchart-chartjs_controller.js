@@ -1,5 +1,5 @@
 import SuperchartBaseController from './superchart-base_controller.js'
-import Chartjs from 'chart.js/auto'
+import Chartjs from "../support/chartjs.js"
 
 export default class extends SuperchartBaseController {
   static targets = [ "chartjsOptions", "chartjsData", "chartjsCanvas" ]
