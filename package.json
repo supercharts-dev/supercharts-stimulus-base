@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "A set of base Stimulus controllers for Supercharts",
   "source": "src/index.js",
-  "module": "dist/superchart-stimulus.esm.js",
-  "main": "dist/superchart-stimulus.js",
+  "module": "dist/superchart-stimulus-base.esm.js",
+  "main": "dist/superchart-stimulus-base.js",
   "files": [
     "dist/*.js",
     "dist/*.js.map",
