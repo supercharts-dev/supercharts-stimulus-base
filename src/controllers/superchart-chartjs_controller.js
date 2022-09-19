@@ -34,6 +34,7 @@ export default class extends SuperchartBaseController {
   
   updateChart() {
     this.chart.data = this.chartjsData
+    this.chart.options = this.chartjsOptions
     this.chart.update()
   }
   
