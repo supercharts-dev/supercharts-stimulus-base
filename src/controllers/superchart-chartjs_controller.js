@@ -6,10 +6,12 @@ export default class extends SuperchartBaseController {
   
   connect() {
     this.drawChart()
+    this.watchColorScheme()
   }
   
   disconnect() {
     this.teardownChart()
+    this.unwatchColorScheme()
   }
   
   drawChart() {
@@ -32,7 +34,23 @@ export default class extends SuperchartBaseController {
   
   updateChart() {
     this.chart.data = this.chartjsData
+    this.chart.options = this.chartjsOptions
     this.chart.update()
+  }
+  
+  handleColorSchemeChange() {
+    this.updateChart()
+  }
+  
+  watchColorScheme() {
+    this.colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    this.colorSchemeQuery.addListener(this.handleColorSchemeChange.bind(this))
+  }
+  
+  unwatchColorScheme() {
+    if (this.colorSchemeQuery === undefined) { return }
+    this.colorSchemeQuery.removeListener(this.handleColorSchemeChange)
+    this.colorSchemeQuery = undefined
   }
   
   get chartjsData() {
