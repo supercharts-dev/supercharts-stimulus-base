@@ -1,5 +1,6 @@
 import SuperchartBaseController from './superchart-base_controller.js'
 import Chartjs from "../support/chartjs.js"
+import { parseContentsAsJSON } from "../support/helpers.js"
 
 export default class extends SuperchartBaseController {
   static targets = [ "chartjsOptions", "chartjsData", "chartjsCanvas" ]
@@ -58,7 +59,7 @@ export default class extends SuperchartBaseController {
       console.warn(`The chart needs options in json format.`)
       return {}
     }
-    JSON.parse(this.chartjsOptionsTarget.innerHTML.trim())
+    return parseContentsAsJSON(this.chartjsOptionsTarget)
   }
   
   get chartjsOptions() {
@@ -69,7 +70,7 @@ export default class extends SuperchartBaseController {
     
     return {
       ...this.defaultOptions,
-      ...JSON.parse(this.chartjsOptionsTarget.innerHTML.trim())
+      ...parseContentsAsJSON(this.chartjsOptionsTarget)
     }
   }
   
