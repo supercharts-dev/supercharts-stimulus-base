@@ -77,4 +77,38 @@ export default class extends SuperchartBaseController {
   get defaultOptions() {
     return {}
   }
+  
+  parseForCssVars(options) {
+    const instance = this
+    const parse = function(obj) {
+      
+      const type = function(obj) {
+        return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
+      }
+      
+      const hasCssVar = function(obj) {
+        if (Object.keys(obj).length > 1) { return false }
+        if (!obj.hasOwnProperty('cssVar')) { return false }
+        if (type(obj.cssVar) !== 'string') { return false }
+        if (obj.cssVar.slice(0, 2) !== '--') { return false }
+        return true
+      }
+      
+      if (type(obj) === 'object') {
+        if (hasCssVar(obj)) {
+          return instance.cssPropertyValue(obj.cssVar)
+        } else {
+          for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+              obj[key] = parse(obj[key]);
+            }
+          }
+        }
+      }
+      
+      return obj;
+    }
+    
+    return parse(options);
+  }
 }
