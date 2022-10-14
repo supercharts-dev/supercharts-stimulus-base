@@ -8,6 +8,7 @@ export default class extends SuperchartBaseController {
   connect() {
     this.drawChart()
     this.watchColorScheme()
+    this.runAnimations = true
   }
   
   disconnect() {
@@ -33,7 +34,14 @@ export default class extends SuperchartBaseController {
     }
   }
   
+  handleResize() {
+    this.runAnimations = false
+    this.updateChart()
+    this.runAnimations = true
+  }
+  
   updateChart() {
+    if (this.chart === undefined) { return }
     this.chart.data = this.chartjsData
     this.chart.options = this.chartjsOptions
     this.chart.update()
