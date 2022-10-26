@@ -1,3 +1,3 @@
 export * from './controllers'
 export * from './support/helpers'
-export * from './support/chartjs.js'
+export Chartjs from './support/chartjs.js'
