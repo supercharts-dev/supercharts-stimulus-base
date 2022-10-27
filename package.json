@@ -1,6 +1,6 @@
 {
   "name": "@supercharts/stimulus-base",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "A set of base Stimulus controllers for Supercharts",
   "source": "src/index.js",
   "module": "dist/superchart-stimulus-base.esm.js",
