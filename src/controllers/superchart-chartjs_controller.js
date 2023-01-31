@@ -35,9 +35,10 @@ export default class extends SuperchartBaseController {
   }
   
   handleResize() {
+    const runAnimationsPreviewValue = this.runAnimations
     this.runAnimations = false
     this.updateChart()
-    this.runAnimations = true
+    this.runAnimations = runAnimationsPreviewValue
   }
   
   updateChart() {
