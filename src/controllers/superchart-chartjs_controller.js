@@ -21,7 +21,7 @@ export default class extends SuperchartBaseController {
       console.warn(`The chart needs a canvas element`)
       return
     }
-    this.chart = new Chartjs(this.chartjsCanvasTarget.getContext('2d'), {
+    this.chart = new Chartjs(this.canvas2dContext, {
       data: this.chartjsData,
       options: this.chartjsOptions
     })
@@ -85,6 +85,10 @@ export default class extends SuperchartBaseController {
   
   get defaultOptions() {
     return {}
+  }
+  
+  get canvas2dContext() {
+    this.chartjsCanvasTarget.getContext('2d')
   }
   
   parseForCssVars(options) {
