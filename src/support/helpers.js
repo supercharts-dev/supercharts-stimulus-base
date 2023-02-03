@@ -8,7 +8,7 @@ export function parseContentsAsJSON(el) {
   return JSON.parse(str)
 }
 
-export function parseContentAsCsv(el) {
+export function parseContentsAsCsv(el) {
   let str = el.innerHTML.trim()
   return d3.csvParse(str, d3.autoType)
 }
