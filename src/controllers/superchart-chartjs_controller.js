@@ -88,7 +88,7 @@ export default class extends SuperchartBaseController {
   }
   
   get canvas2dContext() {
-    this.chartjsCanvasTarget.getContext('2d')
+    return this.chartjsCanvasTarget.getContext('2d')
   }
   
   parseForCssVars(options) {
