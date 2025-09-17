@@ -22,7 +22,7 @@
     "update-local-installs": "$npm_execpath run build; yalc push",
     "prerelease": "$npm_execpath run build",
     "release": "np --any-branch",
-    "postinstall": "node -e \"console.error('\\n\\x1b[31mDEPRECATED:\\x1b[0m This package is retired. Eject files locally. See README.\\n')\""
+    "postinstall": "node -e \"console.error('\\n\\x1b[31mDEPRECATED:\\x1b[0m The @supercharts/stimulus-base package is retired. Eject files locally. See README.\\n')\""
   },
   "repository": "git@github.com:supercharts-dev/supercharts-stimulus-base.git",
   "author": "Pascal Laliberté <pascal@hey.com>",
